@@ -5,6 +5,7 @@ import Signup from '../Components/signup';
 // import Login from '../Components/login';
 import SignupRedux from '../Components/SignupRedux';
 import LoginRedux from '../Components/LoginRedux';
+import AddEmployee from '../Components/AddEmployee';
 
 function AppRouter (){
     return(
@@ -26,6 +27,9 @@ function AppRouter (){
                </Routes>
                <Routes>
                <Route path='/loginX' element={<LoginRedux />}></Route>
+               </Routes>
+               <Routes>
+               <Route path='/addEmployee' element={<AddEmployee />}></Route>
                </Routes>
 
                
