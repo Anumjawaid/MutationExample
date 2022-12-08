@@ -11,8 +11,6 @@ function AppRouter (){
     return(
         <>
         <Router>
-               
-                
                <Routes>
                <Route path='/' element={<Signup />}></Route>
                </Routes>
