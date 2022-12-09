@@ -1,108 +1,63 @@
 import React, { useState } from 'react'
-import { useContext,createContext } from 'react'
-import { ContextVar } from './context'
 import Login from './Login'
-import { useNavigate, Link } from 'react-router-dom';
+import Lottie from "lottie-react";
+import loginanimation from "../Images/107385-login.json";
+import { Button } from "antd";
+
 
 
 export default function Signup() {
-    const navigate = useNavigate();
-    const [fName, setfName] = useState()
-    const [lName, setlName] = useState()
-    const [uname, setUname] = useState()
-    const [password, setPassword] = useState()
-    const [login, setLogin] = useState('/signup')
-    let context = useContext(ContextVar())
-    console.log("SignUp", context)
+    
+    let [fname,setFname]=useState("")
+    let  [lname,setLname]=useState("")
+    let [uname,setUname]=useState("")
+    let[pass,setPass]=useState("")
+    let[data,setData]=useState([])
 
-    const Register = (e) => {
+    const Register=(e)=>{
         // 
         e.preventDefault()
-
-        // context.users.push({uname,fName,lName,password})
-        setLogin('/login')
-
-        context.users.push("{uname,fName,lName,password}")
-
-
-        console.log("Signup", context,login)
-
-
+        console.log("Submit")
+        setData([...data,{fname,lname,uname,pass}])
+        
     }
+   
 
     return (
-        <>
-        <Test />
-            {/* <context.Provider value={"fgdfgfd"}> */}
-            {/* {login == '/signup' ?
-                <>
-                    <div className="container">
-                        <h1>Signup Form</h1>
-                        <form onSubmit={(e) => Register(e)}>
-                            <label htmlFor='fname'>First Name</label> <br />
-                            <input placeholder='First Name' value={fName}></input><br /><br /><br />
-                            <label htmlFor='lname' >Last Name</label> <br />
-                            <input placeholder='Last Name' value={lName}></input><br /><br /><br />
-                            <label htmlFor='username' >Username</label> <br />
-                            <input placeholder='Username' value={uname}></input><br /><br /><br />
-                            <label htmlFor='password'>Password</label> <br />
-                            <input placeholder='Password' value={password}></input><br /><br />
-                            <input type='submit' />
-                        </form>
+    <>
+    {data.length ==0 ?
+             <div className="flex-container">
+             <div className="left_side">
+             <Lottie
+                animationData={loginanimation}
+                loop={true}
+                className="img_carousel"
+              />
+             </div>
+             <div className="right_side"> 
+        <form onSubmit={(e)=>Register(e)}>
+        <label htmlFor='fname'>First Name</label> <br/>
+            <input className='fields' value={fname} onChange={(e)=>setFname(e.target.value)}></input><br/><br/><br/>
+            <label htmlFor='lname'>Last Name</label> <br/>
+            <input  className='fields' value={lname} onChange={(e)=>setLname(e.target.value)}></input><br/><br/><br/>
+            <label htmlFor='username'>Username</label> <br/>
+            <input  className='fields' value={uname} onChange={(e)=>setUname(e.target.value)}></input><br/><br/><br/>
+            <label htmlFor='password'>Password</label> <br/>
+            <input  className='fields' name='password' value={pass} onChange={(e)=>setPass(e.target.value)}></input><br/><br/>
+            {/* <input type='submit' /> */}
+            <div className="btn">
+            <Button type='submit' className="signupBtn">
+              Sign Up
+            </Button>
+            </div>
+        </form>
 
-                    </div>
-                </>
-                :
-                <>
-                    <Link to='/login'>Login</Link>
-                </>
-            } */}
-
-            {/* </context.Provider> */}
-        </>
-    )
-}
-
-function Test(){
-    const [fName, setfName] = useState()
-    const [lName, setlName] = useState()
-    const [uname, setUname] = useState()
-    const [password, setPassword] = useState()
-    const[obj,setObj]=useState()
-    let context = useContext(ContextVar())
-    console.log("SignUp", context)
-    const Register = (e) => {
-        // 
-        e.preventDefault()
-
-        // context.users.push({uname,fName,lName,password})
-
-       setObj({uname,fName,lName,password})
-       console.log("Gotto Login",ThemeContext)
-
-        // console.log("Signup", context,login)
-
-
+        </div> 
+        </div>
+    
+    :<Login data={data}/>
     }
-    return(
-        <ThemeContext.Provider value={'dsfd'}>
-        <div className="container">
-                        <h1>Signup Form</h1>
-                        <form onSubmit={(e) =>{ e.preventDefault();
-                            setObj({uname,fName,lName})}
-                            }>
-                            <label htmlFor='fname'>First Name</label> <br />
-                            <input placeholder='First Name' value={fName}></input><br /><br /><br />
-                            <label htmlFor='lname' >Last Name</label> <br />
-                            <input placeholder='Last Name' value={lName}></input><br /><br /><br />
-                            <label htmlFor='username' >Username</label> <br />
-                            <input placeholder='Username' value={uname}></input><br /><br /><br />
-                            <label htmlFor='password'>Password</label> <br />
-                            <input placeholder='Password' value={password}></input><br /><br />
-                            <input type='submit' />
-                        </form>
 
-                    </div>
-      </ThemeContext.Provider>
+    </>
     )
 }
