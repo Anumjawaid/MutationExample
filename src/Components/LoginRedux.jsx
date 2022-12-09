@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom'
 
 export default function LoginRedux() {
     let users=useSelector((state)=>state.users)
+    let current=useSelector((state)=>state.currentuser)
+    // let users=useSelector((state)=>state.users)
       let dispatch=useDispatch()
-      console.log(users,"redux state")
+      console.log(users,current,"redux state")
     
     let [uname,setUname]=useState("")
     let[pass,setPass]=useState("")
@@ -19,8 +21,10 @@ export default function LoginRedux() {
         console.log("Login")
         if(users[0].uname == uname && users[0].pass == pass){
             // 
-            dispatch({type:'LOGIN',payload:true})
-            console.log("")
+            // dispatch({type:'LOGIN',payload:true})
+            dispatch({type:'CURRENT_USER',payload:{uname,pass}})
+            console.log("usets",users)
+            console.log("current",current)
 
         }
         else{

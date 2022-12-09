@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import Login from './Login'
 import { useSelector,useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 export default function SignupRedux() {
+    let navigate=useNavigate()
       let users=useSelector((state)=>state.users)
       let dispatch=useDispatch()
       console.log(users,"redux state")
@@ -20,6 +21,7 @@ export default function SignupRedux() {
         console.log("Submit")
         // setData([...data,{fname,lname,uname,pass}])
         dispatch({type:'ADD_USER',payload:{fname,lname,uname,pass}})
+        navigate('/loginX')
        
         
     }

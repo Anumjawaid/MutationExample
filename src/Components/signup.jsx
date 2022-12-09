@@ -36,6 +36,7 @@ export default function Signup() {
              </div>
              <div className="right_side"> 
         <form onSubmit={(e)=>Register(e)}>
+            
         <label htmlFor='fname'>First Name</label> <br/>
             <input className='fields' value={fname} onChange={(e)=>setFname(e.target.value)}></input><br/><br/><br/>
             <label htmlFor='lname'>Last Name</label> <br/>

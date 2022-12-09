@@ -1,4 +1,4 @@
-import { ADD_USER,LOGIN,ADD_EMPLOYEE } from "./actions";
+import { ADD_USER,LOGIN,ADD_EMPLOYEE,CURRENT_USER } from "./actions";
 const initialState = {
     users:[],
     isloggedIn:false,
@@ -18,6 +18,10 @@ const initialState = {
     case LOGIN:
       return {
         ...initialState, isloggedIn:action.payload
+      };
+      case CURRENT_USER:
+      return {
+        ...initialState, currentuser:[...state.currentuser,action.payload]
       };
     default:
       return state;

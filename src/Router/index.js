@@ -34,28 +34,14 @@ function AppRouter() {
                 <Routes>
                     <Route path='/signup' element={<Signup />}></Route>
                 </Routes>
-                <Routes>
-                    <Route path='/handle' element={<Handle />}></Route>
-                </Routes>
-                <Routes>
-                    <Route path='/login' element={<Login />}></Route>
-                </Routes>
-                <Routes>
-                    <Route path='/' element={<Home />}></Route>
-                </Routes>
+           
+               
+               
                 <Routes>
                     <Route path='/mutate' element={<Mutate />}></Route>
                 </Routes>
-                <Routes>
-                    <Route path='/test' element={<Test1 />}></Route>
-                </Routes>
-                <Routes>
-                    <Route path='/testlogin' element={<Login_Test />}></Route>
-                </Routes>
-                <Routes>
-                    <Route path='/testsignup' element={<Signup_Test />}></Route>
-                </Routes>
-
+                
+              
 
 
 
