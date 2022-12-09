@@ -1,38 +1,111 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.flex-container {
+  display: flex;
+}
+.left_side {
+  background: linear-gradient(
+    90deg,
+    rgba(26, 190, 189, 1) 0%,
+    rgba(0, 122, 255, 1) 33%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  width: 50%;
+  height: 100vh;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.img_carousel {
+  margin-top: 10%;
+  height: 450px;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.right_side {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.main_right {
+  display: flex;
+  flex-direction: column;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.Down_side {
+  height: auto;
+}
+.inputField {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 10px;
+}
+.forgot_Password {
+  margin-right: 19em;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 20px !important;
+}
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+.signupBtn {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(
+    90deg,
+    /* rgba(2, 0, 36, 1) 0%, */
+    rgba(0, 122, 255, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-color: #007aff !important;
+  width: 52%;
+  height: 42px !important;
+  border-radius: 5px !important;
+  margin-bottom: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main_left {
+  margin-top: 100px ;
+}
+.fields{
+  width:50ch;
+  margin-top:'20px';
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media query */
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .flex-container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .left_side {
+ display: none;
+  }
+  .right_side {
+    width: 100%;
+  }
+  .main_left {
+    margin-top: 10px;
   }
 }

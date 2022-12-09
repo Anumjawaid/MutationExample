@@ -69,7 +69,8 @@ function Test(){
     const [uname, setUname] = useState()
     const [password, setPassword] = useState()
     const[obj,setObj]=useState()
-    const ThemeContext = createContext(null);
+    let context = useContext(ContextVar())
+    console.log("SignUp", context)
     const Register = (e) => {
         // 
         e.preventDefault()
